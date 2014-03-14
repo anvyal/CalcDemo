@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	static float op1, op2, op, result;
 	private EditText text;
 
 	@Override
@@ -30,7 +31,7 @@ public class MainActivity extends Activity {
 		  public void onClick(View view) {
 			
 			float inputValue = Float.parseFloat(text.getText().toString());
-			
+			String str=text.getText().toString();
 		    switch (view.getId()) {
 		    case R.id.button1:
 		    	if(inputValue == 0)
@@ -113,7 +114,6 @@ public class MainActivity extends Activity {
 		    		text.setText(text.getText()+"0");
 		        break; 
 		    case R.id.back:
-		    	String str=text.getText().toString();
 		    	if (str == null )
 		    	{
 		    		//Do Nothing
@@ -127,9 +127,96 @@ public class MainActivity extends Activity {
 	            	text.setText("0");
 	            }
 		    	    		    	
+		        break; 
+		    case R.id.clear:
+		    	
+		    	if (str == null )
+		    	{
+		    		//Do Nothing
+		    	}
+		    	else
+		    	{
+		    		op1=op2=op=0;
+		    		text.setText(Integer.toString(0));
+		    	}
+		    	break;
+		    case R.id.add:
+		    	if(inputValue == 0)
+		    	{
+		    		//Do Nothing
+		      	}
+		    	else
+		    	{
+		    		op1 = Float.parseFloat(text.getText().toString());
+		    		op = 1; 
+		    		text.setText(Integer.toString(0));
+		    	}		    		
 		        break;
+		    case R.id.sub:
+		    	if(inputValue == 0)
+		    	{
+		    		//Do Nothing
+		      	}
+		    	else
+		    	{
+		    		op1 = Float.parseFloat(text.getText().toString());
+		    		op = 2; 
+		    		text.setText(Integer.toString(0));
+		    	}
+		    	break;
+		    case R.id.mul:
+		    	if(inputValue == 0)
+		    	{
+		    		//Do Nothing
+		      	}
+		    	else
+		    	{
+		    		op1 = Float.parseFloat(text.getText().toString());
+		    		op = 3; 
+		    		text.setText(Integer.toString(0));
+		    	}
+		    	break;
+		    case R.id.div:
+		    	if(inputValue == 0)
+		    	{
+		    		//Do Nothing
+		      	}
+		    	else
+		    	{
+		    		op1 = Float.parseFloat(text.getText().toString());
+		    		op = 4; 
+		    		text.setText(Integer.toString(0));
+		    	}
+		    	break;
+		    case R.id.result:
+		    	if(inputValue == 0)
+		    	{
+		    		//Do Nothing
+		      	}
+		    	else
+		    	{
+		    		op2 = Float.parseFloat(text.getText().toString());
+		    		switch ((int)op) {
+				    case 1:
+		    			result = op1+op2;
+		    			text.setText(Float.toString(result));
+		    			break;
+				    case 2:
+		    			result = op1-op2;
+		    			text.setText(Float.toString(result));
+		    			break;
+				    case 3:
+		    			result = op1*op2;
+		    			text.setText(Float.toString(result));
+		    			break;
+				    case 4:
+		    			result = op1/op2;
+		    			text.setText(Float.toString(result));
+		    			break;				    
+		    		}
 
 		      
+		    	}
 		    }
 		  }
 
