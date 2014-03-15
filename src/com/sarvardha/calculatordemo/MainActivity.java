@@ -199,7 +199,8 @@ public class MainActivity extends Activity {
 		    case R.id.result:
 		    	if(inputValue == 0)
 		    	{
-		    		//Do Nothing
+		    		Toast.makeText(this, "Enter Operand2!!",
+				    		Toast.LENGTH_LONG).show();
 		      	}
 		    	else
 		    	{
