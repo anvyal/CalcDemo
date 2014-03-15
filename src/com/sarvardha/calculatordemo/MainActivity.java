@@ -163,7 +163,7 @@ public class MainActivity extends Activity {
 		    case R.id.sub:
 		    	if(inputValue == 0)
 		    	{
-		    		//Do Nothing
+		    		text.setText("-0");
 		      	}
 		    	else
 		    	{
