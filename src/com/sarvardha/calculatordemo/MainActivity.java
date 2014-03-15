@@ -113,6 +113,14 @@ public class MainActivity extends Activity {
 		    	else
 		    		text.setText(text.getText()+"0");
 		        break; 
+		    case R.id.decimal:
+		    	if(str.contains("."))
+		    	{
+		    		//Do Nothing
+		      	}
+		    	else
+		    		text.setText(text.getText()+".");
+		        break; 
 		    case R.id.back:
 		    	if (str == null )
 		    	{
